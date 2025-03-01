@@ -58,10 +58,8 @@ lot_area = st.number_input("Lot Area sf", min_value=1300, max_value=215245, valu
 year_built = st.number_input("Year Built", min_value=1900, max_value=2025, value=2000)
 
 # Predict price based on user input
-input_data = pd.DataFrame([[gr_liv_area, total_bsmt_sf, garage_cars, year_built]], columns=features)
+input_data = pd.DataFrame([[bedrooms, bathrooms, lot_area, year_built]], columns=features)
 predicted_price = model.predict(input_data)[0]
 
-st.title('Housing Price Prediction')
-st.write("Predict housing prices based on various features")
-
+st.write(f"Predicted Sale Price: ${predicted_price:,.2f}")
 
