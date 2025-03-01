@@ -61,4 +61,7 @@ year_built = st.number_input("Year Built", min_value=1900, max_value=2025, value
 input_data = pd.DataFrame([[gr_liv_area, total_bsmt_sf, garage_cars, year_built]], columns=features)
 predicted_price = model.predict(input_data)[0]
 
-st.write(f"Predicted Sale Price: ${predicted_price:,.2f}")
+st.title('Housing Price Prediction')
+st.write("Predict housing prices based on various features")
+
+
